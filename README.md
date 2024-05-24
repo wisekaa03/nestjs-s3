@@ -1,7 +1,7 @@
 # NestJS S3
 
-<a href="https://www.npmjs.com/package/nestjs-s3"><img src="https://img.shields.io/npm/v/nestjs-s3.svg" alt="NPM Version" /></a>
-<a href="https://www.npmjs.com/package/nestjs-s3"><img src="https://img.shields.io/npm/l/nestjs-s3.svg" alt="Package License" /></a>
+<a href="https://www.npmjs.com/package/nestjs-s3-aws"><img src="https://img.shields.io/npm/v/nestjs-s3-aws.svg" alt="NPM Version" /></a>
+<a href="https://www.npmjs.com/package/nestjs-s3-aws"><img src="https://img.shields.io/npm/l/nestjs-s3-aws.svg" alt="Package License" /></a>
 
 ## Table of Contents
 
@@ -16,7 +16,7 @@ Integrates S3 with Nest
 ## Installation
 
 ```bash
-npm install nestjs-s3 @aws-sdk/client-s3
+npm install nestjs-s3-aws @aws-sdk/client-s3
 ```
 
 You can also use the interactive CLI
@@ -25,21 +25,11 @@ You can also use the interactive CLI
 npx nestjs-modules
 ```
 
-## Examples
-
-```bash
-docker run \
--p 9000:9000 \
--e MINIO_ACCESS_KEY=minio \
--e MINIO_SECRET_KEY=password \
-minio/minio server /data
-```
-
 ### S3Module.forRoot(options, connection?)
 
 ```ts
 import { Module } from '@nestjs/common';
-import { S3Module } from 'nestjs-s3';
+import { S3Module } from 'nestjs-s3-aws';
 import { AppController } from './app.controller';
 
 @Module({
@@ -66,7 +56,7 @@ export class AppModule {}
 
 ```ts
 import { Module } from '@nestjs/common';
-import { S3Module } from 'nestjs-s3';
+import { S3Module } from 'nestjs-s3-aws';
 import { AppController } from './app.controller';
 
 @Module({
@@ -95,7 +85,7 @@ export class AppModule {}
 
 ```ts
 import { Controller, Get, } from '@nestjs/common';
-import { InjectS3, S3 } from 'nestjs-s3';
+import { InjectS3, S3 } from 'nestjs-s3-aws';
 
 @Controller()
 export class AppController {
